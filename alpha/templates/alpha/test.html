@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meekly</title>
+        
+        <!--Import Google Icon Font-->
+        <link href="./common/material-icons.css" rel="stylesheet" />
+        
+        <!-- Compiled and minified CSS -->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g= sha384-5KZdSYqynSzIjQGS2M1O3HW6HVDBjfNx0v5Y2eQuE3vvQ9NTiiPK9/GWc0yYCrgw sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" media="screen,projection" />
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+        <script type="text/javascript">
+        const carouselLargeOptions = {
+            noWrap: false,
+            numVisible: 3,
+            shift: 0,
+            padding: 40,
+            dist: -5,
+            onCycleTo: largeCarouselChangeTitle
+        }
+        const carouselLargeTitles = new Map([
+            ["largecarousel-0", "Wonder Woman 1984"],
+            ["largecarousel-1", "Godzilla vs. Kong"],
+            ["largecarousel-2", "DC's Legends of Tomorrow"]
+        ]);
+        const carouselSmallOptions = {
+            noWrap: false,
+            numVisible: 7,
+            shift: 0,
+            padding: 40,
+            dist: -5
+        }
+        
+        function largeCarouselChangeTitle(elem, ignored1, ignored2) {
+            var key = elem.id;
+            document.getElementById("largecarousel-title").innerHTML = carouselLargeTitles.get(key);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var elemsSidenav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elemsSidenav, {
+                draggable: false
+            });
+            var elemsCollapsible = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elemsCollapsible, {
+                accordion: false  // Even .collapsible-accordion should not be accordions. Leaving the (misleading) class up as removing it breaks the theme >:(
+            });
+            var elemsCarouselLarge = document.querySelectorAll('.carousel-large');
+            M.Carousel.init(elemsCarouselLarge, carouselLargeOptions);
+            var elemsCarouselSmall = document.querySelectorAll('.carousel-small');
+            M.Carousel.init(elemsCarouselSmall, carouselSmallOptions);
+            
+            var elemsModals = document.querySelectorAll('.modal');
+            M.Modal.init(elemsModals, {
+                dismissible: true
+            });
+            
+            var elems = document.querySelectorAll('.tooltipped');
+            M.Tooltip.init(elems, {});
+        });
+        </script>
+    
+        <link type="text/css" rel="stylesheet" href="./common/meekly.common.css" media="screen,projection" />
+    </head>
+
+    <body>
+    
+        <!-- Action Bar -->
+        <nav class="z-depth-0 white"><div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center black-text"><b class="black-text">Meekly</b></a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large black-text"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right">
+                    <li>
+                        <a href="./search/mr-robot.html"><i class="material-icons black-text">search</i></a>
+                    </li>
+                    <li class="hide-on-med-and-down">
+                        <a href="#!"><b class="black-text">Hugo Cuenca</b></a>
+                    </li>
+                    <li>
+                        <a href="#!"><img src="./common/me.jpg" width="40px" style="margin-top: 12px;" class="circle"/></a>
+                    </li>
+                </ul>
+            </div>
+        </div></nav>
+        
+        
+        <!-- Action Drawer (hamburger menu on all devices, per request) -->
+        <ul id="slide-out" class="sidenav">
+            <li class="active"><a href="#!"><i class="material-icons">home</i>Home</a></li>
+            
+            <li><div class="divider"></div></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">Linked Streaming Services<i class="material-icons">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#!">Netflix</a></li>
+                                <li><a href="#!">Hulu</a></li>
+                                <li><a href="#!">Disney+</a></li>
+                                <li><a href="#!">Amazon Prime Video</a></li>
+                                <li><a href="#!">YouTube TV</a></li>
+                                <li><a href="#!">Fox Nation</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header">Collections<i class="material-icons">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#!">🤩🍿🍿 (Alice)</a></li>
+                                <li><a href="#!">[g]old (Diego)</a></li>
+                                <li><a href="#!">Sci-Fi (Diego)</a></li>
+                                <li><a href="#!">Best Anime (Mark)</a></li>
+                                <li><a href="#!">Favs (Kate)</a></li>
+                                <li><a href="./collections/28e9134ad9812ff.html">Mind=🤯 (Santiago)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+      
+            <li><a href="billboard.html"><i class="material-icons">view_list</i>Billboard</a></li>
+      
+            <li><div class="divider"></div></li>
+            <li><a href="./settings.html"><i class="material-icons">settings</i>Settings</a></li>
+        </ul>
+    
+        <!-- Layout -->
+        <main>
+        
+            <!-- Big Carousel -->
+            <div class="section">
+                <div class="carousel carousel-large">
+                    <a class="carousel-item modal-trigger" href="#modal-generic" id="largecarousel-0"><img class="movie-art" src="./common/peli_wonder_woman_1984.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic" id="largecarousel-1"><img class="movie-art" src="./common/peli_godzilla_vs_kong.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic" id="largecarousel-2"><img class="movie-art" src="./common/serie_dc_legends_of_tomorrow_season_5.jpg" /></a>
+                </div>
+                <div>
+                    <br />
+                    <h5 class="center-align" id="largecarousel-title">Wonder Woman 1984</h5>
+                </div>
+            </div>
+            <div class="divider"></div>
+            
+            <!-- Meekly Recommendations -->
+            <div class="section">
+                <div class="container"><h5>Recommended for you</h5></div>
+                <div class="carousel carousel-small">
+                    <a class="carousel-item modal-trigger" href="#modal-mr-robot"><img class="movie-art" src="./common/peli1_mr_robot.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-parasite"><img class="movie-art" src="./common/peli5_parasite.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_top_gun_maverick.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_no_time_to_die.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-bad-boys-for-life"><img class="movie-art" src="./common/peli_bad_boys_for_life.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-star-trek-picard"><img class="movie-art" src="./common/peli_star_trek_picard.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-john-wick-3"><img class="movie-art" src="./common/peli_john_wick_3.jpg" /></a>
+                </div>
+            </div>
+            <br />
+            
+            <!-- Popular with friends -->
+            <div class="section">
+                <div class="container"><h5><i class="material-icons" style="float: left;">people</i>&nbsp;What your friends watch</h5></div>
+                <div class="carousel carousel-small">
+                    <a class="carousel-item modal-trigger" href="#modal-narcos"><img class="movie-art" src="./common/serie_narcos.jpg" /></a> <!-- used to be href="narcos.html" -->
+                    <a class="carousel-item modal-trigger" href="#modal-breaking-bad"><img class="movie-art" src="./common/pelidiego3_breaking_bad.png" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-the-office"><img class="movie-art" src="./common/pelidiego1_the_office.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-inception"><img class="movie-art" src="./common/pelidiego2_inception.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-interstellar"><img class="movie-art" src="./common/peli_interstellar.jpeg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-jack-ryan"><img class="movie-art" src="./common/peli2_jack_ryan.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-forrest-gump"><img class="movie-art" src="./common/peli_forrest_gump.jpg" /></a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            
+            <!-- Trending in Location -->
+            <div class="section">
+                <div class="container"><h5><i class="material-icons" style="float: left;">trending_up</i>&nbsp;Trending in Austin, Texas</h5></div>
+                <div class="carousel carousel-small">
+                    <a class="carousel-item modal-trigger" href="#modal-parasite"><img class="movie-art" src="./common/peli5_parasite.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_birds_of_prey.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_black_widow.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli3_the_young_turks.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/bg_black.plain.svg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-silicon-valley"><img class="movie-art" src="./common/serie_silicon_valley.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli4_now_this.jpeg" /></a>
+                </div>
+            </div>
+            <br />
+            
+            <!-- Popular [with/in] ${RELEVANT_EVENT} -->
+            <div class="section">
+                <div class="container"><h5>Popular in Quarantine</h5></div>
+                <div class="carousel carousel-small">
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_arrival.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_mad_max_fury_road.png" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_frozen_2.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_back_to_the_future.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_booksmart.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_get_out.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_captain_america_the_winter_soldier.jpg" /></a>
+                </div>
+            </div>
+            <br />
+            
+            <!-- New releases -->
+            <div class="section">
+                <div class="container"><h5><i class="material-icons" style="float: left;">new_releases</i>&nbsp;Fresh New Releases</h5></div>
+                <div class="carousel carousel-small">
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_disney_mulan.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_the_gentlemen_2020.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_emma_2020.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_a_quiet_place_2.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_the_lovebirds_2020.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_wonder_woman_1984.jpg" /></a>
+                    <a class="carousel-item modal-trigger" href="#modal-generic"><img class="movie-art" src="./common/peli_black_widow.jpg" /></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Generic Movie -->
+            <div id="modal-generic" class="movie-art-card modal modal-media">
+                <div class="modal-content">
+                    <h4>Thanks for viewing this mockup!</h4>
+                    <p>To see an example of what would appear here, see Narcos or Parasite. Some others work as well, so why not explore around?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-meekly-accent btn-flat"><b>OK</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Narcos -->
+            <div id="modal-narcos" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/serie_narcos.jpg">
+                        <span class="card-title"><b>Narcos</b></span>
+                        <a href="https://www.netflix.com/title/80025172" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light red tooltipped" data-position="bottom" data-tooltip="Play on Netflix"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h5>A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar, as well as the many other drug kingpins who plagued the country through the years.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.netflix.com/watch/80025313" class="waves-effect waves-meekly-accent btn-flat"><b>Season 1</b></a>
+                    <a href="https://www.netflix.com/watch/80101273" class="waves-effect waves-meekly-accent btn-flat"><b>Season 2</b></a>
+                    <a href="https://www.netflix.com/watch/80126672" class="waves-effect waves-meekly-accent btn-flat"><b>Season 3</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Mr. Robot -->
+            <div id="modal-mr-robot" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli1_mr_robot.jpg">
+                        <span class="card-title"><b>Mr. Robot</b></span>
+                        <a href="https://www.amazon.com/Mr-Robot-Season-1/dp/B00YBX664Q" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-4 tooltipped" data-position="bottom" data-tooltip="Play on Amazon Prime Video"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h6>"Mr. Robot" follows Elliot (Rami Malek), a young programmer who works as a cyber-security engineer by day and a vigilante hacker by night. Elliot finds himself at a crossroads when the mysterious leader (Christian Slater) of an underground hacker group recruits him to destroy the corporation he is paid to protect.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.amazon.com/gp/video/detail/B00YBX664Q/" class="waves-effect waves-meekly-accent btn-flat"><b>Season 1</b></a>
+                    <a href="https://www.amazon.com/gp/video/detail/B01H4KWUEC/" class="waves-effect waves-meekly-accent btn-flat"><b>Season 2</b></a>
+                    <a href="https://www.amazon.com/gp/video/detail/B0758P2MMC/" class="waves-effect waves-meekly-accent btn-flat"><b>Season 3</b></a>
+                    <a href="https://www.amazon.com/gp/video/detail/B07X1V834N/" class="waves-effect waves-meekly-accent btn-flat"><em>Season 4 (BUY)</em></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Parasite -->
+            <div id="modal-parasite" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli5_parasite.jpg">
+                        <span class="card-title"><b>Parasite</b></span>
+                        <a href="https://www.hulu.com/movie/parasite-2fd691a0-f66b-467f-8635-00d7f151f3d4" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light green tooltipped" data-position="bottom" data-tooltip="Play on Hulu"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h5>Greed, class discrimination, and a mysterious interloper threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.hulu.com/movie/parasite-2fd691a0-f66b-467f-8635-00d7f151f3d4" class="waves-effect waves-meekly-accent btn-flat"><b>Stream on Hulu</b></a>
+                    <a href="https://www.amazon.com/Parasite-English-Subtitled-Kang-Song/dp/B07YM14FRG" class="waves-effect waves-meekly-accent btn-flat"><b>Buy/Rent on Amazon</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Silicon Valley -->
+            <div id="modal-silicon-valley" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/serie_silicon_valley.jpg">
+                        <span class="card-title"><b>Silicon Valley</b></span>
+                        <a href="https://www.hbo.com/silicon-valley" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light black tooltipped" data-position="bottom" data-tooltip="Play on HBO"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h6>From HBO and the offbeat mind of Mike Judge ('Office Space' 'Beavis & Butthead') comes this comedy series set in the outrageous world of Silicon Valley's tech start-ups. In each episode, the show follows introverted programmer Richard and his pals who are going nowhere fast--until his website's unique compression algorithm becomes the subject of an extreme bidding war.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.hbo.com/silicon-valley/season-01" class="waves-effect waves-meekly-accent btn-flat"><b>Season 1</b></a>
+                    <a href="https://www.hbo.com/silicon-valley/season-02" class="waves-effect waves-meekly-accent btn-flat"><b>Season 2</b></a>
+                    <a href="https://www.hbo.com/silicon-valley/season-03" class="waves-effect waves-meekly-accent btn-flat"><b>Season 3</b></a>
+                    <a href="https://www.hbo.com/silicon-valley/season-4" class="waves-effect waves-meekly-accent btn-flat"><b>Season 4</b></a>
+                    <a href="https://www.hbo.com/silicon-valley/season-5" class="waves-effect waves-meekly-accent btn-flat"><b>Season 5</b></a>
+                    <a href="https://www.hbo.com/silicon-valley/season-6" class="waves-effect waves-meekly-accent btn-flat"><b>Season 6</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Bad Boys for Life -->
+            <div id="modal-bad-boys-for-life" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli_bad_boys_for_life.jpg">
+                        <span class="card-title"><b>Bad Boys For Life</b></span>
+                        <a href="https://www.starz.com/us/en/movies/50297" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light black tooltipped" data-position="bottom" data-tooltip="Play on STARZ"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h5>Detectives Mike Lowrey and Marcus Burnett team up again for another adventure.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.starz.com/us/en/movies/50297" class="waves-effect waves-meekly-accent btn-flat"><b>Stream on STARZ</b></a>
+                    <a href="https://www.amazon.com/Bad-Boys-Life-Will-Smith/dp/B083ZJG1Q1/" class="waves-effect waves-meekly-accent btn-flat"><b>Buy/Rent on Amazon</b></a>
+                    <a href="https://play.google.com/store/movies/details/Bad_Boys_for_Life?id=9X1BRAVlE2s.P" class="waves-effect waves-meekly-accent btn-flat"><b>Buy/Rent on Google Play</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Star Trek Picard -->
+            <div id="modal-star-trek-picard" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli_star_trek_picard.jpg">
+                        <span class="card-title"><b>Start Trek: Picard</b></span>
+                        <a href="https://www.cbs.com/shows/star-trek-picard/" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light blue tooltipped" data-position="bottom" data-tooltip="Play on CBS All Access"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h6>At the end of the 24th Century, and 14 years after his retirement from Starfleet, Jean-Luc Picard is living a quiet life on his vineyard, Chateau Picard. When he is sought out by a mysterious young woman, Dahj, in need of his help, he soon realizes she may have personal connections to his own past.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.cbs.com/shows/star-trek-picard/" class="waves-effect waves-meekly-accent btn-flat"><b>Season 1</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for John Wick 3 -->
+            <div id="modal-john-wick-3" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli_john_wick_3.jpg">
+                        <span class="card-title"><b>John Wick: Chapter 3 - Parabellum</b></span>
+                        <a href="https://www.hbo.com/movies/john-wick-chapter-3-parabellum" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light black tooltipped" data-position="bottom" data-tooltip="Play on HBO"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h6>Keanu Reeves is back as John Wick in this third thrilling installment in the action film series that the Detroit News described as a "fun, entertaining romp." With a massive bounty on his head in the wake of his killing a High Table (the assassin's guild) member, the legendary hit man is left fighting for his life on the streets of New York. Halle Berry, Laurence Fishburne, Mark Dacascos, Asia Kate Dillon, Lance Reddick with Anjelica Huston and Ian McShane co-star. Directed by Chad Stahelski; written by Derek Kolstad and Shay Hatten and Chris Collins & Marc Abrams, story by Derek Kolstad, based on the characters created by Derek Kolstad.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.hbo.com/movies/john-wick-chapter-3-parabellum" class="waves-effect waves-meekly-accent btn-flat"><b>Stream on HBO</b></a>
+                    <a href="https://www.amazon.com/John-Wick-Chapter-3-Parabellum/dp/B07SV5HH14" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on Amazon</b></a>
+                    <a href="https://play.google.com/store/movies/details/John_Wick_Chapter_3_Parabellum?id=8RjQ1NMOoMo.P" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on Google Play</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Breaking Bad -->
+            <div id="modal-breaking-bad" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/pelidiego3_breaking_bad.png">
+                        <span class="card-title"><b>Breaking Bad</b></span>
+                        <a href="https://www.netflix.com/title/70143836" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light red tooltipped" data-position="bottom" data-tooltip="Play on Netflix"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h5>A high school chemistry teacher dying of cancer teams with a former student to secure his family's future by manufacturing and selling crystal meth.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.netflix.com/watch/70196252" class="waves-effect waves-meekly-accent btn-flat"><b>Season 1</b></a>
+                    <a href="https://www.netflix.com/watch/70196259" class="waves-effect waves-meekly-accent btn-flat"><b>Season 2</b></a>
+                    <a href="https://www.netflix.com/watch/70196272" class="waves-effect waves-meekly-accent btn-flat"><b>Season 3</b></a>
+                    <a href="https://www.netflix.com/watch/70236035" class="waves-effect waves-meekly-accent btn-flat"><b>Season 4</b></a>
+                    <a href="https://www.netflix.com/watch/70236412" class="waves-effect waves-meekly-accent btn-flat"><b>Season 5</b></a>
+                    <a href="https://www.amazon.com/gp/product/B003CH9PV8" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on Amazon</b></a>
+                    <a href="https://play.google.com/store/tv/show?id=L2wfgMDGiBk&cdid=tvseason-2LA4CTEOrZM&gdid=tvepisode-PNxGMkcus_g" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on Google Play</b></a>
+                    <a href="https://itunes.apple.com/us/tv-season/id271383858" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on iTunes</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for The Office -->
+            <div id="modal-the-office" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/pelidiego1_the_office.jpg">
+                        <span class="card-title"><b>The Office</b></span>
+                        <a href="https://www.netflix.com/title/70136120" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light red tooltipped" data-position="bottom" data-tooltip="Play on Netflix"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h5>Furious when Karen offers Stanley a position at her office branch in Utica, Michael tricks Jim into joining him and Dwight in a prank against her.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.netflix.com/watch/70105212" class="waves-effect waves-meekly-accent btn-flat"><b>Season 1</b></a>
+                    <a href="https://www.netflix.com/watch/70069633" class="waves-effect waves-meekly-accent btn-flat"><b>Season 2</b></a>
+                    <a href="https://www.netflix.com/watch/70080635" class="waves-effect waves-meekly-accent btn-flat"><b>Season 3</b></a>
+                    <a href="https://www.netflix.com/watch/70108687" class="waves-effect waves-meekly-accent btn-flat"><b>Season 4</b></a>
+                    <a href="https://www.netflix.com/watch/70126223" class="waves-effect waves-meekly-accent btn-flat"><b>Season 5</b></a>
+                    <a href="https://www.netflix.com/watch/70151933" class="waves-effect waves-meekly-accent btn-flat"><b>Season 6</b></a>
+                    <a href="https://www.netflix.com/watch/70189006" class="waves-effect waves-meekly-accent btn-flat"><b>Season 7</b></a>
+                    <a href="https://www.netflix.com/watch/70210965" class="waves-effect waves-meekly-accent btn-flat"><b>Season 8</b></a>
+                    <a href="https://www.netflix.com/watch/70286845" class="waves-effect waves-meekly-accent btn-flat"><b>Season 9</b></a>
+                    <!-- a href="https://www.amazon.com/The-Office-Season-1/dp/B000U7O8LA" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on Amazon</b></a>
+                    <a href="https://play.google.com/store/tv/show?id=OPYcd4k7ZSQ&cdid=tvseason-wmUbXZdM6fk&gdid=tvepisode-zKWHNFiW0_k" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on Google Play</b></a>
+                    <a href="https://itunes.apple.com/us/tv-season/id102772946?i=102225200" class="waves-effect waves-meekly-accent btn-flat"><b>Buy on iTunes</b></a -->
+                </div>
+            </div>
+            
+            <!-- Modal for Inception -->
+            <div id="modal-inception" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/pelidiego2_inception.jpg">
+                        <span class="card-title"><b>Inception</b></span>
+                        <a href="https://www.amazon.com/Inception-Leonardo-DiCaprio/dp/B0047WJ11G" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-4 tooltipped" data-position="bottom" data-tooltip="Play on Amazon"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h5>Leonardo DiCaprio plays a thief who steals corporate secrets from sleeping minds. Now he must be the first to pull off the reverse: planting an idea in exchange for his freedom.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.amazon.com/gp/video/detail/B0047WJ11G" class="waves-effect waves-meekly-accent btn-flat"><b>Stream/Buy/Rent on Amazon</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Interstellar -->
+            <div id="modal-interstellar" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli_interstellar.jpeg">
+                        <span class="card-title"><b>Interstellar</b></span>
+                        <a href="https://www.amazon.com/Interstellar-Matthew-McConaughey/dp/B00TU9UFTS" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-4 tooltipped" data-position="bottom" data-tooltip="Buy/Rent on Amazon"><i class="material-icons">shopping_basket</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h6>In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole. But first, Brand must send former NASA pilot Cooper (Matthew McConaughey) and a team of researchers through the wormhole and across the galaxy to find out which of three planets could be mankind's new home.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.amazon.com/gp/product/B00TU9UO1W" class="waves-effect waves-meekly-accent btn-flat"><b>Buy/Rent on Amazon</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Forrest Gump -->
+            <div id="modal-forrest-gump" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli_forrest_gump.jpg">
+                        <span class="card-title"><b>Forrest Gump</b></span>
+                        <a href="https://www.starz.com/us/en/movies/47427" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light black tooltipped" data-position="bottom" data-tooltip="Play on STARZ"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h5>The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other history unfold through the perspective of a fictional Alabama man with an IQ of 75.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.starz.com/us/en/movies/47427" class="waves-effect waves-meekly-accent btn-flat"><b>Stream on STARZ</b></a>
+                    <a href="https://www.microsoft.com/en-us/p/forrest-gump/8d6kgwzl5vj5?activetab=pivot%3aoverviewtab" class="waves-effect waves-meekly-accent btn-flat"><b>Buy/Rent on Microsoft Store</b></a>
+                    <a href="https://www.youtube.com/watch?v=EtYNngO7eq4" class="waves-effect waves-meekly-accent btn-flat"><b>Buy/Rent on YouTube</b></a>
+                    <a href="https://www.vudu.com/content/movies/details/title/22436" class="waves-effect waves-meekly-accent btn-flat"><b>Buy/Rent on VUDU</b></a>
+                </div>
+            </div>
+            
+            <!-- Modal for Jack Ryan -->
+            <div id="modal-jack-ryan" class="card movie-art-card modal modal-media">
+                <div class="modal-content modal-content-no-padding">
+                    <div class="card-image">
+                        <img src="./common/peli2_jack_ryan.jpg">
+                        <span class="card-title"><b>Jack Ryan</b></span>
+                        <a href="https://www.amazon.com/Tom-Clancys-Jack-Ryan-Season-1/dp/B073RPZK88" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-4 tooltipped" data-position="bottom" data-tooltip="Play on Amazon"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <div class="card-content">
+                        <h6>When CIA analyst Jack Ryan stumbles upon a suspicious series of bank transfers his search for answers pulls him from the safety of his desk job and catapults him into a deadly game of cat and mouse throughout Europe and the Middle East, with a rising terrorist figurehead preparing for a massive attack against the US and her allies.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.amazon.com/gp/video/detail/B073RPZK88/" class="waves-effect waves-meekly-accent btn-flat"><b>Season 1</b></a>
+                    <a href="https://www.amazon.com/gp/video/detail/B07V3TNS85/" class="waves-effect waves-meekly-accent btn-flat"><b>Season 2</b></a>
+                </div>
+            </div>
+        </main>
+      
+        <!-- Compiled and minified JavaScript, at the end of the body for optimized loading -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0= sha384-ZOED+d9HxogEQwD+jFvux96iGQR9TxfJO+mPF2ZS0TuKH6eWrmvPsDpO6I0OWdiX sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>
+    </body>
+</html>
